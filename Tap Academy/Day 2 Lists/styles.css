@@ -1,0 +1,169 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Body ===== */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: radial-gradient(circle at top, #1e293b, #020617);
+  color: #f8fafc;
+  line-height: 1.7;
+  padding: 30px;
+  animation: pageEnter 1s ease;
+}
+
+/* ===== MAIN TITLE ===== */
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 35px;
+  color: #22d3ee;
+  text-shadow: 0 0 15px rgba(34, 211, 238, 0.6);
+}
+
+/* ===== SECTION TITLES ===== */
+h2 {
+  font-size: 1.5rem;
+  margin: 35px 0 20px;
+  padding: 10px 15px;
+  background: linear-gradient(90deg, #22d3ee, #a855f7);
+  color: #020617;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== SUB TITLES ===== */
+h3 {
+  color: #f472b6;
+  margin-bottom: 8px;
+}
+
+/* ===== ORDERED LIST CARDS ===== */
+ol {
+  margin-left: 0;
+}
+
+ol > li {
+  list-style-position: inside;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 18px;
+  margin-bottom: 25px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+ol > li:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(168, 85, 247, 0.6);
+}
+
+/* ===== INNER LIST (PLANT NAMES) ===== */
+ul {
+  margin-top: 12px;
+  margin-left: 25px;
+}
+
+ul li {
+  background: linear-gradient(90deg, #22d3ee33, #a855f733);
+  padding: 8px 12px;
+  margin: 8px 0;
+  border-radius: 20px;
+  display: inline-block;
+  color: #f1f5f9;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ===== LIFE CYCLE = STEPS ===== */
+h2 + ol > li {
+  position: relative;
+  padding-left: 45px;
+}
+
+h2 + ol > li::before {
+  content: "🌱";
+  position: absolute;
+  left: 12px;
+  top: 18px;
+  font-size: 1.4rem;
+}
+
+/* ===== LIFE CYCLE DESCRIPTION ===== */
+h2 + ol ul li {
+  display: block;
+  border-radius: 10px;
+  background: rgba(34, 211, 238, 0.15);
+}
+
+/* ===== DEFINITION LIST (NEON CARDS) ===== */
+dl {
+  margin-top: 45px;
+}
+
+dt {
+  background: linear-gradient(90deg, #a855f7, #f472b6);
+  color: #020617;
+  padding: 12px;
+  border-radius: 14px 14px 0 0;
+  font-weight: bold;
+}
+
+dd {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 0 0 14px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================== */
+/* ========= RESPONSIVE ========= */
+/* ============================== */
+
+@media (max-width: 768px) {
+  body {
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  ul li {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  ol > li {
+    padding: 14px;
+  }
+}

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORMS</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <form action="">
+      <fieldset>
+        <legend>Personal Details</legend>
+        <table>
+          <tr>
+            <td><label for="fn">First Name</label></td>
+            <td>
+              <input
+                type="text"
+                id="fn"
+                name="fn"
+                placeholder="Ex: Ranga"
+                size="15"
+                maxlength="10"
+                required
+              /><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="ln">Surname</label></td>
+            <td>
+              <input
+                type="text"
+                id="ln"
+                name="ln
+                placeholder="Ex: T"
+                size="15"
+              /><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="mob">Mobile Number</label></td>
+            <td>
+              <input
+                type="tel"
+                id="mob"
+                name="mob"
+                placeholder="Ex: 1234567890"
+                size="15"
+                pattern="[0-9]{10}"
+                title="Enter 10 digit mobile number"
+              /><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="mail">Email</label></td>
+            <td>
+              <input
+                type="email"
+                id="mail"
+                name="mail"
+                size="15"
+                placeholder="Ex: ramu@gmail.com"
+                required
+              /><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="pwd">Password</label></td>
+            <td>
+              <input
+                type="password"
+                id="pwd"
+                name="pwd"
+                placeholder="min 6 characters"
+                size="15"
+                minlength="5"
+                maxlength="20"
+                required
+              /><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="cpwd">Confirm Password</label></td>
+            <td>
+              <input
+                type="password"
+                id="cpwd"
+                name="cpwd"
+                placeholder="same as password"
+                size="15"
+                minlength="5"
+                required
+              /><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="dob">DOB</label></td>
+            <td>
+              <input
+                type="date"
+                id="dob"
+                name="dob"
+                min="1950-01-01"
+                max="2010-12-31"
+              /><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label>Gender</label></td>
+            <td>
+              <input type="radio" id="male" name="gender" value="M" />
+              <label for="male">Male</label>
+              <input type="radio" id="female" name="gender" value="F" />
+              <label for="female">Female</label>
+              <input type="radio" id="custom" name="gender" value="C" />
+              <label for="custom">Custom</label>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="country">Select Country</label></td>
+            <td>
+              <select id="country" name="Country">
+                <option value="">-- Select --</option>
+                <option value="INDIA" selected>INDIA</option>
+                <option value="USA">USA</option>
+                <option value="China">China</option></select
+              ><br />
+            </td>
+          </tr>
+          <tr>
+            <td><label>Interests</label></td>
+            <td>
+              <input type="checkbox" id="interest" name="interest" value="coding" />
+              <label for="interest">Coding</label>
+              <input
+                type="checkbox"
+                id="interest"
+                name="interest"
+                value="development"
+              />
+              <label for="interest">Development</label>
+              <input type="checkbox" id="others" name="others" />
+              <label for="interest">Others:</label>
+              <input
+                type="text"
+                id="interest"
+                name="interest"
+                placeholder="saperate by , (comma)"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="pic">Upload Picture</label></td>
+            <td>
+              <input type="file" id="pic" name="pic" accept="image/*" /><br />
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+      <input type="submit" value="Submit" />
+      &nbsp;&nbsp;
+      <input type="reset" value="Reset" />
+    </form>
+  </body>
+</html>
