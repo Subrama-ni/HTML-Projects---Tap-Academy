@@ -1,0 +1,203 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Body ===== */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #0b1220;
+  color: #e5e7eb;
+  line-height: 1.7;
+  padding: 20px;
+  animation: fadeIn 1s ease-in;
+}
+
+/* ===== Headings ===== */
+h1 {
+  text-align: center;
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+h2 {
+  text-align: center;
+  color: #7dd3fc;
+  margin: 15px 0;
+}
+
+h3 {
+  color: #34d399;
+  margin-top: 15px;
+}
+
+h4 {
+  color: #facc15;
+  margin-top: 25px;
+}
+
+/* ===== Paragraphs ===== */
+p {
+  background-color: #020617;
+  padding: 12px;
+  margin: 12px 0;
+  border-left: 4px solid #38bdf8;
+  border-radius: 6px;
+}
+
+/* ===== Movie List ===== */
+ul {
+  list-style: none;
+}
+
+li {
+  background-color: #020617;
+  margin: 15px 0;
+  padding: 12px;
+  border-radius: 10px;
+  border-left: 6px solid #475569;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Movie Colors */
+#li1 {
+  border-left-color: #a855f7;
+}
+#li2 {
+  border-left-color: #22c55e;
+}
+#li3 {
+  border-left-color: #ef4444;
+}
+
+/* ===== Media Section (NO FLEX) ===== */
+.media-box {
+  background-color: #020617;
+  padding: 15px;
+  margin: 20px 0 35px;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+}
+
+/* Image */
+.media-box img {
+  display: inline-block;
+  width: 160px;
+  vertical-align: top;
+  margin-right: 20px;
+  border-radius: 10px;
+  border: 3px solid #334155;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.media-box img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(56, 189, 248, 0.4);
+}
+
+/* Video */
+.media-box video {
+  display: inline-block;
+  width: 520px;
+  max-width: 100%;
+  border-radius: 10px;
+  border: 3px solid #38bdf8;
+}
+
+/* ===== Songs ===== */
+#song {
+  margin-top: 40px;
+  text-align: center;
+  color: #38bdf8;
+}
+
+.music {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #c7d2fe;
+}
+
+audio {
+  width: 100%;
+  margin: 10px 0 20px;
+}
+
+/* ===== Small Elements ===== */
+mark {
+  background-color: #facc15;
+  color: #020617;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+abbr {
+  color: #a855f7;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================================= */
+/* =============== RESPONSIVE PART ================= */
+/* ================================================= */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .media-box img {
+    width: 140px;
+    margin-right: 15px;
+  }
+
+  .media-box video {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .media-box img,
+  .media-box video {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .media-box img {
+    margin-bottom: 15px;
+  }
+}
