@@ -1,145 +1,146 @@
-/* =========================
-   RESET
-========================= */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #0f172a; /* dark slate */
-  color: #e5e7eb;
-  padding: 30px;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: white;
 }
 
-/* =========================
-   TABLE CONTAINER
-========================= */
-table {
+/* ================= WRAPPER ================= */
+
+.wrapper {
+  width: 95%;
+  max-width: 1100px;
+  padding: 40px;
+}
+
+/* TITLE */
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  background: linear-gradient(45deg, #38bdf8, #a855f7);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ================= TABLE ================= */
+
+.timetable {
   width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
   border-collapse: collapse;
-  background-color: #020617;
-  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
-/* =========================
-   CAPTION
-========================= */
+/* CAPTION */
 caption {
-  caption-side: top;
-  padding: 16px;
-  font-size: 1.4rem;
-  font-weight: bold;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
   color: #38bdf8;
-  background: linear-gradient(90deg, #020617, #0f172a, #020617);
+}
+
+/* HEADER */
+thead th {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(45deg, #38bdf8, #a855f7);
+  color: white;
+  padding: 15px;
   letter-spacing: 1px;
 }
 
-/* =========================
-   TABLE HEAD
-========================= */
-thead th {
-  background-color: #1e293b;
-  color: #f8fafc;
-  padding: 14px;
-  font-size: 0.95rem;
-  border: 1px solid #334155;
+/* CELLS */
+td,
+th {
+  padding: 15px;
   text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
 }
 
-/* =========================
-   TABLE BODY
-========================= */
-tbody th {
-  background-color: #020617;
-  color: #7dd3fc;
+/* ROW HOVER EFFECT */
+tbody tr:hover {
+  background: rgba(56, 189, 248, 0.15);
+  transform: scale(1.01);
+}
+
+/* COLUMN STYLE */
+tbody td:hover {
+  background: rgba(168, 85, 247, 0.25);
+}
+
+/* LUNCH COLUMN */
+.lunch {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
   font-weight: bold;
-  text-align: left;
-  padding: 12px;
-  border: 1px solid #334155;
+  background: rgba(34, 197, 94, 0.2);
 }
 
-tbody td {
-  background-color: #020617;
-  padding: 12px;
-  border: 1px solid #334155;
-  text-align: center;
-  color: #e5e7eb;
-}
-
-/* =========================
-   SPECIAL CELLS
-========================= */
-
-/* Lunch Break column */
-td[rowspan] {
-  background: linear-gradient(180deg, #1e293b, #0f172a);
-  color: #facc15;
-  font-weight: bold;
-}
-
-/* Project Class cell */
-td[colspan] {
-  background-color: #1e293b;
-  color: #a5f3fc;
+/* PROJECT CELLS */
+.project {
+  background: rgba(168, 85, 247, 0.25);
   font-weight: 600;
 }
 
-/* Saturday row */
-tr:last-child td {
-  background-color: #0f172a;
-  color: #cbd5f5;
-  font-style: italic;
-  font-weight: 500;
+/* IMPORTANT CLASS */
+.highlight {
+  color: #22c55e;
+  font-weight: bold;
 }
 
-/* =========================
-   HOVER EFFECT
-========================= */
-tbody tr:hover td,
-tbody tr:hover th {
-  background-color: #1e293b;
-  transition: background-color 0.3s ease;
+/* SATURDAY NOTE */
+.note-row {
+  background: rgba(56, 189, 248, 0.2);
+  font-weight: 600;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-  body {
-    padding: 16px;
-  }
+/* ZEBRA STRIPES */
+tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
+}
 
-  table {
-    font-size: 0.85rem;
-  }
+/* ================= ANIMATION ================= */
 
-  caption {
-    font-size: 1.1rem;
-  }
+.timetable {
+  animation: fadeIn 1s ease;
+}
 
-  thead th,
-  tbody td,
-  tbody th {
-    padding: 8px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 480px) {
-  table {
-    font-size: 0.75rem;
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 800px) {
+  td,
+  th {
+    padding: 10px;
+    font-size: 12px;
   }
 
-  caption {
-    font-size: 1rem;
+  .title {
+    font-size: 1.6rem;
   }
 }

@@ -1,6 +1,4 @@
-/* =========================
-   RESET & GLOBAL
-========================= */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -11,265 +9,359 @@ html {
   scroll-behavior: smooth;
 }
 
-/* =========================
-   BODY
-========================= */
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #020617);
-  color: #e5e7eb;
-  line-height: 1.8;
-  padding: 35px;
-  animation: pageFade 1.2s ease-in;
+  font-family: "Poppins", sans-serif;
+  background: #020617;
+  color: white;
+  line-height: 1.6;
 }
 
-/* =========================
-   PAGE ENTRY ANIMATION
-========================= */
-@keyframes pageFade {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================
-   MAIN TITLE
-========================= */
-h1 {
-  font-size: 2.6rem;
-  margin-bottom: 10px;
-  animation: slideDown 1s ease;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-h1::after {
+/* ===== BACKGROUND ATMOSPHERE ===== */
+body::before {
   content: "";
-  display: block;
-  width: 100px;
-  height: 4px;
-  margin-top: 12px;
-  background: linear-gradient(90deg, #38bdf8, #818cf8);
-  border-radius: 4px;
-  animation: glowBar 2s infinite alternate;
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(56, 189, 248, 0.2),
+      transparent 40%
+    ),
+    radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.2), transparent 40%);
+  z-index: -1;
 }
 
-@keyframes glowBar {
-  from {
-    box-shadow: 0 0 5px #38bdf8;
-  }
+/* ================= HERO ================= */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background:
+    linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.9)),
+    url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d")
+      center/cover no-repeat;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  background: linear-gradient(45deg, #38bdf8, #a855f7);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  margin-top: 10px;
+  opacity: 0.85;
+}
+
+/* ================= NAV ================= */
+.quick-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.quick-links a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.06);
+  transition: 0.3s;
+}
+
+.quick-links a:hover {
+  background: linear-gradient(45deg, #38bdf8, #a855f7);
+}
+
+/* ================= CONTENT ================= */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* CARD */
+.card {
+  padding: 35px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+/* ================= IFRAME ================= */
+
+.iframe-box {
+  margin-top: 20px;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 ratio */
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.iframe-box iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #01030a;
+}
+
+footer a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+/* ================= ULTRA FRAME ================= */
+
+.iframe-frame {
+  position: relative;
+  border-radius: 22px;
+  padding: 8px;
+  background: linear-gradient(
+    120deg,
+    rgba(56, 189, 248, 0.6),
+    rgba(168, 85, 247, 0.6),
+    rgba(34, 197, 94, 0.6)
+  );
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+/* glow border animation */
+.iframe-frame::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: inherit;
+  filter: blur(20px);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* hover cinematic lift */
+.card:hover .iframe-frame {
+  transform: scale(1.02);
+}
+
+/* ================= SHINE EFFECT ================= */
+
+.shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.35),
+    transparent 80%
+  );
+  transform: translateX(-120%);
+  animation: shineMove 6s infinite;
+}
+
+@keyframes shineMove {
   to {
-    box-shadow: 0 0 20px #818cf8;
+    transform: translateX(120%);
   }
 }
-
-/* =========================
-   PARAGRAPH
-========================= */
-p {
-  color: #cbd5f5;
-  margin: 12px 0 25px;
-  animation: fadeIn 1.2s ease;
+.iframe-box {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+/* iframe reveal illusion */
+.iframe-box iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  opacity: 0.95;
+  transition: 0.6s;
 }
 
-/* =========================
-   QUICK LINKS
-========================= */
-h2 {
-  font-size: 1.6rem;
-  margin: 50px 0 15px;
-  color: #ffffff;
+/* zoom immersion */
+.card:hover iframe {
+  transform: scale(1.03);
+}
+.card {
   position: relative;
 }
 
-h2::before {
-  content: "◆";
+.card::after {
+  content: "";
   position: absolute;
-  left: -22px;
-  color: #38bdf8;
-  animation: pulse 1.5s infinite;
+  inset: auto 10% -25px 10%;
+  height: 40px;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.6), transparent);
+  filter: blur(15px);
+  z-index: -1;
+}
+/* ================= CINEMATIC LIGHT ================= */
+
+.cinema-light {
+  position: fixed;
+  inset: -20%;
+  background:
+    radial-gradient(
+      circle at 30% 40%,
+      rgba(56, 189, 248, 0.25),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 70% 60%,
+      rgba(168, 85, 247, 0.25),
+      transparent 40%
+    );
+  animation: cinemaMove 18s ease-in-out infinite alternate;
+  z-index: -3;
+  filter: blur(80px);
 }
 
-@keyframes pulse {
-  0% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.3;
-  }
-}
-
-ul {
-  background: rgba(255, 255, 255, 0.06);
-  padding: 18px;
-  border-radius: 16px;
-  margin-bottom: 50px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
-  animation: slideUp 1s ease;
-}
-
-@keyframes slideUp {
+@keyframes cinemaMove {
   from {
-    opacity: 0;
-    transform: translateY(25px);
+    transform: translate(-5%, -5%) scale(1);
   }
+  to {
+    transform: translate(5%, 5%) scale(1.2);
+  }
+}
+.film-grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(0, 0, 0, 0.03) 2px,
+    transparent 4px
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.25;
+  z-index: 999;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle,
+    transparent 55%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  pointer-events: none;
+  z-index: 998;
+}
+.iframe-frame {
+  transform-style: preserve-3d;
+  transition: 0.6s;
+}
+
+.card:hover .iframe-frame {
+  transform: perspective(1200px) rotateX(4deg) rotateY(-6deg) scale(1.03);
+}
+
+/* screen glow */
+.iframe-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  box-shadow:
+    0 0 60px rgba(56, 189, 248, 0.35),
+    inset 0 0 40px rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+.iframe-frame .shine {
+  animation: shineMove 8s linear infinite;
+  opacity: 0.5;
+}
+.card {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: reveal 1s ease forwards;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes reveal {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
-
-ul li {
-  display: inline-block;
-  margin: 6px 12px;
-}
-
-ul a {
-  text-decoration: none;
-  color: #e0e7ff;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #1e293b, #020617);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-ul a:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.5);
-}
-
-/* =========================
-   CENTER SECTION
-========================= */
-center {
-  display: block;
-}
-
-/* =========================
-   IFRAMES (STAR OF THE PAGE)
-========================= */
-iframe {
-  display: block;
-  margin: 25px auto 60px;
-  border-radius: 18px;
-  border: 2px solid rgba(56, 189, 248, 0.4);
-  background-color: #020617;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
-  animation: floatCard 4s ease-in-out infinite;
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease;
-}
-
-@keyframes floatCard {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-iframe:hover {
-  transform: scale(1.02);
-  box-shadow: 0 40px 80px rgba(129, 140, 248, 0.8);
-}
-
-/* =========================
-   BACK TO TOP BUTTON
-========================= */
-p a[href="#top"] {
-  display: inline-block;
-  margin-top: 50px;
-  padding: 12px 24px;
+/* cinematic intro fade */
+.iframe-box {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
   border-radius: 16px;
-  background: linear-gradient(135deg, #38bdf8, #818cf8);
-  color: #020617;
-  font-weight: bold;
-  text-decoration: none;
-  animation: bounce 2s infinite;
+  overflow: hidden;
+  background: #000;
 }
 
-@keyframes bounce {
-  0%,
+/* fade curtain */
+.iframe-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #020617;
+  animation: screenReveal 1.6s ease forwards;
+  z-index: 2;
+}
+
+/* reveal animation */
+@keyframes screenReveal {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.6;
+  }
   100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
-/* =========================
-   HR LINE
-========================= */
-hr {
-  margin-top: 50px;
+.iframe-box iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   border: none;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #38bdf8, transparent);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-  body {
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 2.1rem;
-  }
-
-  ul li {
-    display: block;
-    margin: 10px 0;
-  }
-
-  iframe {
-    width: 100% !important;
-    height: 360px;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.7rem;
-  }
-
-  iframe {
-    height: 300px;
-  }
 }

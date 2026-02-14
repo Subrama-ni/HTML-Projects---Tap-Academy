@@ -7,95 +7,164 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <h1>Subramani T - Full Stack Java Developer</h1>
-    <p>Welcome to my portfolio website!Use navigation below to explore:</p>
-    <ul>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li>
-        <a href="./assets/Subramani_T__Resume.pdf" download="Subramani_T_resume"
-          >Download Resume</a
+    <!-- ===== HERO / NAVBAR ===== -->
+    <header class="hero">
+      <nav class="navbar">
+        <h2 class="logo">Subramani T</h2>
+
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-content">
+        <h1>Full Stack Java Developer</h1>
+        <p>Building scalable applications & modern web experiences</p>
+
+        <a
+          class="btn"
+          href="./assets/Subramani_T__Resume.pdf"
+          download="Subramani_T_resume"
         >
-      </li>
-    </ul>
+          Download Resume
+        </a>
+      </div>
+    </header>
 
-    <h2 id="about">About me</h2>
-    <p>
-      I am a motivated and passionate Full Stack Developer with strong hands-on
-      experience in building scalable and responsive web applications using
-      modern technologies. I have a solid foundation in Java and JavaScript,
-      with practical expertise in frontend and backend development. My technical
-      strengths include designing clean user interfaces, developing RESTful
-      APIs, managing databases, and integrating full-stack systems. I have
-      worked on multiple real-world projects involving React, Spring Boot,
-      MySQL, Oracle, and Firebase, where I gained experience in application
-      architecture, CRUD operations, authentication, and deployment workflows.
-      Currently, I am pursuing my Full Stack Developer Internship at Tap
-      Academy, where I am undergoing Campus-to-Corporate training in Core Java,
-      Advanced Java, React.js, and SQL. I am actively applying OOP concepts,
-      JDBC, REST APIs, and database operations while developing industry-level
-      projects. I am enthusiastic about problem-solving, continuous learning,
-      and contributing to innovative development teams. My goal is to grow as a
-      professional software engineer and deliver impactful digital solutions.
-    </p>
-    <a target="_blank" href="https://github.com/Subrama-ni">GitHub Link</a>
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
 
-    <h2 id="skills">Skills</h2>
-    <ul type="square">
-      <li>Java</li>
-      <li>Spring Boot</li>
-      <li>JavaScript</li>
-      <li>HTML/CSS</li>
-      <li>React</li>
-      <li>SQL</li>
-      <li>RESTful APIs</li>
-    </ul>
+      <p class="about-text">
+        I am a passionate Full Stack Developer skilled in Java, Spring Boot,
+        React, and SQL. I build scalable web applications with clean UI design,
+        REST APIs, and database integration. Currently pursuing my internship at
+        Tap Academy while developing industry-level projects.
+      </p>
 
-    <h2>Learning Goals</h2>
-    <ol>
-      <li>Master advanced Java programming concepts.</li>
-      <li>Deepen understanding of Spring Boot framework.</li>
-      <li>Enhance front-end development skills with React.</li>
-      <li>Explore cloud computing and deployment strategies.</li>
-      <li>Contribute to open-source projects on GitHub.</li>
-    </ol>
+      <a class="link-btn" target="_blank" href="https://github.com/Subrama-ni">
+        View GitHub →
+      </a>
+    </section>
 
-    <h2>Tech Glossary</h2>
-    <dl>
-      <dt>Java</dt>
-      <dd>A high-level, class-based, object-oriented programming language.</dd>
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section">
+      <h2>Skills</h2>
 
-      <dt>Spring Boot</dt>
-      <dd>A framework that simplifies the development of Java applications.</dd>
+      <div class="skills-grid">
+        <span>Java</span>
+        <span>Spring Boot</span>
+        <span>JavaScript</span>
+        <span>HTML/CSS</span>
+        <span>React</span>
+        <span>SQL</span>
+        <span>REST APIs</span>
+      </div>
+    </section>
 
-      <dt>React</dt>
-      <dd>A JavaScript library for building user interfaces.</dd>
+    <!-- ===== LEARNING GOALS ===== -->
+    <!-- ===== DEVELOPER JOURNEY ===== -->
+    <section class="section journey">
+      <h2>🚀 Developer Journey</h2>
 
-      <dt>RESTful APIs</dt>
-      <dd>
-        APIs that adhere to REST architectural principles for web services.
-      </dd>
-    </dl>
+      <div class="timeline">
+        <div class="milestone">
+          <h3>🌱 Foundation</h3>
+          <p>Mastering Core Java, OOP concepts and programming logic.</p>
+        </div>
 
-    <h2 id="projects">Projects</h2>
-    <ul>
-      <li>
-        <a target="_blank" href="https://github.com/Subrama-ni/Marketing"
-          >Java Projects</a
-        >
-      </li>
-    </ul>
+        <div class="milestone">
+          <h3>⚙ Backend Builder</h3>
+          <p>
+            Developing REST APIs using Spring Boot and database integration.
+          </p>
+        </div>
 
-    <h2 id="contact">Contact Me</h2>
-    <ul>
-      <li><a href="mailto:st562114@gmail.com">Mail Me</a></li>
-      <li>
-        <a href="tel:9019711816">Call Me</a>
-      </li>
-    </ul>
+        <div class="milestone">
+          <h3>🎨 Frontend Creator</h3>
+          <p>Building responsive interfaces using HTML, CSS and React.</p>
+        </div>
 
-    <a href="">☝Back to Top </a>
+        <div class="milestone">
+          <h3>🔗 Full Stack Engineer</h3>
+          <p>Connecting frontend, backend and authentication systems.</p>
+        </div>
+
+        <div class="milestone">
+          <h3>☁ Future Goal</h3>
+          <p>Exploring cloud deployment and scalable architecture.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TECH GLOSSARY ===== -->
+    <section class="section tech">
+      <h2>⚡ Tech Knowledge</h2>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3>Java</h3>
+          <p>
+            Object-oriented language used to build scalable backend systems.
+          </p>
+        </div>
+
+        <div class="tech-card">
+          <h3>Spring Boot</h3>
+          <p>Framework for building production-ready APIs quickly.</p>
+        </div>
+
+        <div class="tech-card">
+          <h3>React</h3>
+          <p>Component-based library for modern dynamic interfaces.</p>
+        </div>
+
+        <div class="tech-card">
+          <h3>REST APIs</h3>
+          <p>Architecture enabling communication between applications.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section projects">
+      <h2>🚀 Featured Project</h2>
+
+      <div class="project-showcase">
+        <div class="project-info">
+          <h3>Marketing Platform</h3>
+          <p>
+            Full Stack Java application implementing authentication, REST APIs,
+            database operations and responsive UI design.
+          </p>
+
+          <a
+            target="_blank"
+            href="https://github.com/Subrama-ni/Marketing"
+            class="btn"
+          >
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact-hero">
+      <h2>Let’s Build Something Amazing Together</h2>
+      <p>Open to internships, collaborations and developer opportunities.</p>
+
+      <div class="contact-buttons">
+        <a href="mailto:st562114@gmail.com">📧 Email Me</a>
+        <a href="tel:9019711816">📱 Call Me</a>
+      </div>
+    </section>
+
+    <footer>
+      <a href="#">⬆ Back to Top</a>
+    </footer>
   </body>
 </html>

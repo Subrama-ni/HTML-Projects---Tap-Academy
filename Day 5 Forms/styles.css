@@ -1,170 +1,153 @@
-/* Reset */
+/* ===== RESET ===== */
 * {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Page background */
-body {
   margin: 0;
   padding: 0;
-  background-color: #0f172a;
-  color: #e5e7eb;
+  box-sizing: border-box;
 }
 
-/* Main heading */
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at 20% 20%, #38bdf833, transparent),
+    radial-gradient(circle at 80% 80%, #a855f733, transparent), #020617;
+  color: white;
+}
+
+/* ===== FORM CARD ===== */
+.form-wrapper {
+  width: 90%;
+  max-width: 750px;
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+  animation: fadeUp 1s ease;
+}
+
 h1 {
   text-align: center;
-  margin-top: 20px;
-  color: #38bdf8;
-  animation: slideDown 1s ease;
+  margin-bottom: 25px;
+  background: linear-gradient(45deg, #38bdf8, #a855f7);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-/* Form container */
-form {
-  width: 90%;
-  max-width: 600px;
-  margin: 30px auto;
-  background-color: #020617;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
-  animation: fadeIn 1.5s ease;
-}
-
-/* Fieldset */
+/* FIELDSET */
 fieldset {
-  border: 1px solid #334155;
-  border-radius: 10px;
-  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 25px;
+  border-radius: 15px;
 }
 
-/* Legend */
 legend {
   padding: 0 10px;
-  color: #7dd3fc;
-  font-weight: bold;
+  color: #38bdf8;
 }
 
-/* Table */
-table {
+/* GRID */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* INPUT BOX */
+.input-box {
+  position: relative;
+}
+
+.input-box input {
   width: 100%;
-  border-spacing: 10px;
-}
-
-/* Labels */
-label {
-  font-size: 14px;
-  color: #cbd5f5;
-}
-
-/* Inputs, select */
-input,
-select {
-  width: 100%;
-  padding: 8px 10px;
-  border-radius: 6px;
-  border: 1px solid #334155;
-  background-color: #020617;
-  color: #f8fafc;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-/* Radio & checkbox fix */
-input[type="radio"],
-input[type="checkbox"] {
-  width: auto;
-  margin-right: 5px;
-}
-
-/* File input */
-input[type="file"] {
-  padding: 5px;
-}
-
-/* Focus effect */
-input:focus,
-select:focus {
-  border-color: #38bdf8;
-  box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
-}
-
-/* Buttons */
-input[type="submit"],
-input[type="reset"] {
-  width: 120px;
-  padding: 10px;
-  margin: 20px 10px 0 0;
+  padding: 14px;
+  border-radius: 10px;
   border: none;
-  border-radius: 8px;
-  font-weight: bold;
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+/* FLOAT LABEL */
+.input-box label {
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  color: #aaa;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 12px;
+  color: #38bdf8;
+}
+
+.static {
+  position: static;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* GROUPS */
+.group {
+  margin-top: 20px;
+}
+
+.group p {
+  margin-bottom: 8px;
+  color: #38bdf8;
+}
+
+.group label {
+  margin-right: 15px;
+}
+
+/* SELECT & FILE */
+select,
+.group input[type="text"],
+.group input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+/* BUTTONS */
+.buttons {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.buttons input {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  margin: 10px;
+  font-weight: 600;
   cursor: pointer;
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
+  background: linear-gradient(45deg, #38bdf8, #a855f7);
+  color: white;
+  transition: 0.3s;
 }
 
-/* Submit */
-input[type="submit"] {
-  background-color: #22c55e;
-  color: #022c22;
+.buttons input:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px #38bdf8;
 }
 
-/* Reset */
-input[type="reset"] {
-  background-color: #ef4444;
-  color: #450a0a;
-}
-
-/* Hover animation */
-input[type="submit"]:hover,
-input[type="reset"]:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-  table,
-  tr,
-  td {
-    display: block;
-    width: 100%;
-  }
-
-  td {
-    margin-bottom: 10px;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-
-  input[type="submit"],
-  input[type="reset"] {
-    width: 100%;
-    margin-top: 10px;
-  }
-}
-
-/* Animations */
-@keyframes fadeIn {
+/* ANIMATION */
+@keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
